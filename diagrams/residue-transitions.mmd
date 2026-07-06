@@ -1,0 +1,14 @@
+flowchart LR
+    Rp["R_p: Produced residue"]
+    Ra["R_a: Accessible residue"]
+    Rs["R_s: Assigned residue"]
+    Ru["R_u: Unreachable residue"]
+    Rb["R_b: Bridge residue"]
+
+    Rp -->|"becomes accessible"| Ra
+    Rp -->|"assigned to route"| Rs
+    Rp -->|"persists but unreachable"| Ru
+    Ru -->|"through bridge residue"| Rb
+    Rb -->|"supports access"| Ra
+    Ra -->|"assigned to route"| Rs
+

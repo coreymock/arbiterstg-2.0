@@ -1,0 +1,79 @@
+{
+  "case_id": "ASTG-EX-001",
+  "title": "Bridge-dependent post-execution log review",
+  "execution_context": "A workflow completed. Primary logs are incomplete, but checksum fragments and downstream timestamps remain.",
+  "reviewer": "Example reviewer",
+  "review_date": "2026-07-05",
+  "residues": [
+    {
+      "residue_id": "R-001",
+      "description": "Checksum fragment corresponding to a missing primary log segment.",
+      "produced": true,
+      "accessibility": "partial",
+      "assigned_route": "technical audit route",
+      "transfer_target": null,
+      "bridge_residue": true,
+      "bridge_description": "Downstream checksum and timestamp correlation.",
+      "support_limitations": [
+        "Primary log segment is missing.",
+        "Observer access is incomplete."
+      ],
+      "claims": [
+        "The workflow executed.",
+        "The checksum proves full observer completion."
+      ],
+      "masking_indicators": [],
+      "authority_laundering_indicators": [
+        "Bridge residue is being presented as full recovery."
+      ],
+      "collapse_by_clarification_risk": false,
+      "proposed_mode": null
+    },
+    {
+      "residue_id": "R-002",
+      "description": "Institutional assignment record created after review began.",
+      "produced": true,
+      "accessibility": "full",
+      "assigned_route": "institutional review route",
+      "transfer_target": "external procedural archive",
+      "bridge_residue": false,
+      "bridge_description": null,
+      "support_limitations": [
+        "Assignment record does not establish origin."
+      ],
+      "claims": [
+        "Institutional assignment proves origin."
+      ],
+      "masking_indicators": [
+        "Assignment category hides the prior trace route."
+      ],
+      "authority_laundering_indicators": [
+        "Institutional assignment is being treated as origin."
+      ],
+      "collapse_by_clarification_risk": true,
+      "proposed_mode": null
+    },
+    {
+      "residue_id": "R-003",
+      "description": "Alleged intermediate residue with no accessible support.",
+      "produced": true,
+      "accessibility": "none",
+      "assigned_route": null,
+      "transfer_target": null,
+      "bridge_residue": false,
+      "bridge_description": null,
+      "support_limitations": [
+        "No bridge residue has formed.",
+        "No direct access is available."
+      ],
+      "claims": [
+        "No trace means no execution."
+      ],
+      "masking_indicators": [],
+      "authority_laundering_indicators": [],
+      "collapse_by_clarification_risk": false,
+      "proposed_mode": null
+    }
+  ]
+}
+

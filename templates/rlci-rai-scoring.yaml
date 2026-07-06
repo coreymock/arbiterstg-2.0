@@ -1,0 +1,15 @@
+scoring_type: RLCI and RAI Scoring Sheet
+case_id:
+scores:
+  - residue_id:
+    rlci:
+      score:
+      rationale:
+    rai:
+      score:
+      rationale:
+    scoring_boundary: >
+      Scores describe residue loss criticality and residue accessibility. They
+      do not determine truth, origin, ownership, legality, morality, safety, or
+      final accountability.
+

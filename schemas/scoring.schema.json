@@ -1,0 +1,38 @@
+{
+  "title": "ArbiterSTG RLCI and RAI Scoring",
+  "description": "JSON Schema-compatible structure for ArbiterSTG RLCI and RAI scoring sheets.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_id", "scores"],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "scores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["residue_id", "rlci", "rai", "rationale"],
+        "properties": {
+          "residue_id": {
+            "type": "string"
+          },
+          "rlci": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "rai": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "rationale": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

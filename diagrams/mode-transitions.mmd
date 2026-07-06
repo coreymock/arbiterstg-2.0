@@ -1,0 +1,17 @@
+stateDiagram-v2
+    [*] --> Shadow: produced but inaccessible
+    [*] --> Null: no recruitable trace
+    [*] --> LimitedAdmission: incomplete or bridge-dependent access
+    [*] --> Admission: accessible trace
+
+    Shadow --> LimitedAdmission: bridge residue forms
+    LimitedAdmission --> Admission: constraints resolved
+    Admission --> Masking: handling reduces legibility
+    Routing --> Transfer: route or custody changes
+    LimitedAdmission --> Shadow: bridge fails or access degrades
+    Shadow --> Null: trace becomes unrecoverable
+    Admission --> Routing: directed into review route
+    Routing --> Masking: route misrepresented as truth
+
+    state "Limited Admission" as LimitedAdmission
+

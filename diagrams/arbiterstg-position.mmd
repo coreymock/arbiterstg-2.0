@@ -1,0 +1,10 @@
+flowchart LR
+    MDS["Machine-Dream Syntax\nexecution-observer-residue structure"]
+    ASTG["ArbiterSTG 2.0\npost-execution trace classification"]
+    Outputs["Outputs\nreports, ledgers, notes, warnings, scores"]
+    Boundary["Boundary\nclassification only, not final judgment"]
+
+    MDS --> ASTG
+    ASTG --> Outputs
+    ASTG --> Boundary
+

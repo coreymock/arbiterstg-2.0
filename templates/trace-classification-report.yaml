@@ -1,0 +1,37 @@
+report_type: Trace Classification Report
+case_id:
+title:
+execution_context:
+reviewer:
+review_date:
+boundary_statement: >
+  ArbiterSTG classifies post-execution trace handling. This report does not
+  determine truth, origin, ownership, legality, morality, safety, or final
+  accountability.
+residues:
+  - residue_id:
+    description:
+    residue_class:
+    accessibility:
+    trace_eligibility:
+      status:
+      rationale:
+    assigned_mode:
+    route:
+    bridge_dependency:
+    support_limitations: []
+    lacunal_trace:
+      present:
+      rationale:
+    authority_laundering_flag:
+      present:
+      indicators: []
+    collapse_by_clarification_warning:
+      present:
+      rationale:
+    indices:
+      rlci:
+      rai:
+      rationale:
+    claim_limits: []
+

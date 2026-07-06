@@ -1,0 +1,137 @@
+{
+  "title": "ArbiterSTG Trace Classification Input",
+  "description": "JSON Schema-compatible structure for ArbiterSTG trace classification input.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_id", "title", "execution_context", "residues"],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "execution_context": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "review_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "residues": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/residue"
+      }
+    }
+  },
+  "$defs": {
+    "trace_mode": {
+      "type": "string",
+      "enum": [
+        "Admission",
+        "Limited Admission",
+        "Masking",
+        "Routing",
+        "Shadow",
+        "Transfer",
+        "Null"
+      ]
+    },
+    "accessibility": {
+      "type": "string",
+      "enum": [
+        "none",
+        "minimal",
+        "partial",
+        "substantial",
+        "full",
+        "destroyed",
+        "unknown"
+      ]
+    },
+    "residue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["residue_id", "description", "produced", "accessibility"],
+      "properties": {
+        "residue_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "produced": {
+          "type": "boolean"
+        },
+        "accessibility": {
+          "$ref": "#/$defs/accessibility"
+        },
+        "assigned_route": {
+          "type": ["string", "null"]
+        },
+        "transfer_target": {
+          "type": ["string", "null"]
+        },
+        "bridge_residue": {
+          "type": "boolean",
+          "default": false
+        },
+        "bridge_description": {
+          "type": ["string", "null"]
+        },
+        "support_limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "masking_indicators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "authority_laundering_indicators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "collapse_by_clarification_risk": {
+          "type": "boolean",
+          "default": false
+        },
+        "proposed_mode": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/trace_mode"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

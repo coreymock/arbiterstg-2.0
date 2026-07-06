@@ -1,0 +1,17 @@
+ledger_type: Residue Routing Ledger
+ledger_id:
+case_id:
+created_at:
+entries:
+  - residue_id:
+    transition:
+      from_class:
+      to_class:
+      via_bridge_residue:
+    mode:
+    route:
+    transfer_target:
+    bridge_dependency:
+    limitations: []
+    claim_limit:
+

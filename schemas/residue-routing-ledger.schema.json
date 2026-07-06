@@ -1,0 +1,85 @@
+{
+  "title": "ArbiterSTG Residue Routing Ledger",
+  "description": "JSON Schema-compatible structure for ArbiterSTG residue routing ledgers.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ledger_id", "case_id", "entries"],
+  "properties": {
+    "ledger_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    }
+  },
+  "$defs": {
+    "trace_mode": {
+      "type": "string",
+      "enum": [
+        "Admission",
+        "Limited Admission",
+        "Masking",
+        "Routing",
+        "Shadow",
+        "Transfer",
+        "Null"
+      ]
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "residue_id",
+        "from_class",
+        "to_class",
+        "mode",
+        "route",
+        "claim_limit"
+      ],
+      "properties": {
+        "residue_id": {
+          "type": "string"
+        },
+        "from_class": {
+          "type": "string",
+          "enum": ["R_p", "R_a", "R_s", "R_u", "R_b", "unknown"]
+        },
+        "to_class": {
+          "type": "string",
+          "enum": ["R_p", "R_a", "R_s", "R_u", "R_b", "unknown"]
+        },
+        "mode": {
+          "$ref": "#/$defs/trace_mode"
+        },
+        "route": {
+          "type": ["string", "null"]
+        },
+        "bridge_dependency": {
+          "type": ["string", "null"]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "claim_limit": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

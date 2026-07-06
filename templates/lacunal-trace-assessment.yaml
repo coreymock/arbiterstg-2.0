@@ -1,0 +1,21 @@
+assessment_type: Lacunal Trace Assessment
+case_id:
+residue_id:
+residue_description:
+produced_residue_asserted:
+accessibility_condition:
+bridge_formation:
+  status:
+  bridge_residue:
+  bridge_limitations: []
+lacunal_trace:
+  present:
+  rationale:
+possible_resulting_modes:
+  - Shadow
+  - Transfer
+  - Null
+  - Limited Admission
+do_not_convert_to_observer_completion: true
+claim_limits: []
+

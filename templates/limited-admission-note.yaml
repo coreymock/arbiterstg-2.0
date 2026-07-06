@@ -1,0 +1,17 @@
+note_type: Limited Admission Note
+case_id:
+residue_id:
+trace_admitted_under_constraint: true
+constraints:
+  incompleteness:
+  bridge_dependence:
+  proxy_limits:
+  unresolved_accessibility:
+  degraded_support:
+  unresolved_routing:
+admission_boundary: >
+  Limited Admission acknowledges residue while marking its support limits. It
+  does not validate truth, meaning, origin, ownership, guilt, legality, safety,
+  or final accountability.
+claim_limits: []
+
